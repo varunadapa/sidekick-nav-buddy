@@ -50,6 +50,7 @@ const navigationItems = [
 
 export function AppSidebar() {
   const [openItems, setOpenItems] = useState<string[]>(["VSP Report"]);
+  const [activeItem, setActiveItem] = useState<string>("/");
 
   const toggleItem = (title: string) => {
     setOpenItems(prev => 
@@ -57,6 +58,10 @@ export function AppSidebar() {
         ? prev.filter(item => item !== title)
         : [...prev, title]
     );
+  };
+
+  const handleItemClick = (url: string) => {
+    setActiveItem(url);
   };
 
   return (
@@ -127,9 +132,17 @@ export function AppSidebar() {
                               <SidebarMenuSubButton 
                                 asChild
                                 className="hover:bg-black/10 rounded-md"
-                                style={{ color: '#103C42', opacity: 0.8 }}
+                                style={{ 
+                                  backgroundColor: activeItem === subItem.url ? '#103C42' : 'transparent',
+                                  color: activeItem === subItem.url ? 'white' : '#103C42',
+                                  opacity: activeItem === subItem.url ? 1 : 0.8
+                                }}
                               >
-                                <a href={subItem.url} className="flex items-center">
+                                <a 
+                                  href={subItem.url} 
+                                  className="flex items-center"
+                                  onClick={() => handleItemClick(subItem.url)}
+                                >
                                   <subItem.icon className="mr-2 h-4 w-4" />
                                   <span className="text-sm">{subItem.title}</span>
                                 </a>
@@ -142,12 +155,17 @@ export function AppSidebar() {
                   ) : (
                     <SidebarMenuButton 
                       asChild
-                      className={`hover:bg-black/10 rounded-lg ${
-                        item.isActive ? 'bg-black/20 font-medium' : ''
-                      }`}
-                      style={{ color: '#103C42' }}
+                      className="hover:bg-black/10 rounded-lg"
+                      style={{ 
+                        backgroundColor: activeItem === item.url ? '#103C42' : 'transparent',
+                        color: activeItem === item.url ? 'white' : '#103C42'
+                      }}
                     >
-                      <a href={item.url} className="flex items-center">
+                      <a 
+                        href={item.url} 
+                        className="flex items-center"
+                        onClick={() => handleItemClick(item.url)}
+                      >
                         <item.icon className="mr-3 h-5 w-5" />
                         <span>{item.title}</span>
                       </a>
