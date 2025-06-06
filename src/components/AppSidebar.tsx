@@ -60,8 +60,8 @@ export function AppSidebar() {
   };
 
   return (
-    <Sidebar className="w-64 bg-gradient-to-b from-yellow-600 to-yellow-700 text-white border-r-0">
-      <SidebarHeader className="p-6 border-b border-yellow-500/30">
+    <Sidebar className="w-64 text-gray-800 border-r-0" style={{ backgroundColor: '#FAE17F' }}>
+      <SidebarHeader className="p-6 border-b border-yellow-600/30">
         <div className="flex flex-col items-center space-y-3">
           <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center">
             <div className="w-12 h-12 bg-yellow-600 rounded-full flex items-center justify-center">
@@ -69,15 +69,15 @@ export function AppSidebar() {
             </div>
           </div>
           <div className="text-center">
-            <h2 className="text-xl font-bold text-white">TGANB</h2>
-            <p className="text-yellow-200 text-sm">Administration</p>
+            <h2 className="text-xl font-bold text-gray-800">TGANB</h2>
+            <p className="text-gray-600 text-sm">Administration</p>
           </div>
         </div>
       </SidebarHeader>
 
       <SidebarContent className="px-3 py-4">
         <SidebarGroup>
-          <SidebarGroupLabel className="text-yellow-200 text-xs uppercase tracking-wider mb-2">
+          <SidebarGroupLabel className="text-gray-600 text-xs uppercase tracking-wider mb-2">
             Navigation
           </SidebarGroupLabel>
           <SidebarGroupContent>
@@ -90,7 +90,7 @@ export function AppSidebar() {
                       onOpenChange={() => toggleItem(item.title)}
                     >
                       <CollapsibleTrigger asChild>
-                        <SidebarMenuButton className="w-full justify-between hover:bg-yellow-500/20 text-white rounded-lg">
+                        <SidebarMenuButton className="w-full justify-between hover:bg-yellow-600/20 text-gray-800 rounded-lg">
                           <div className="flex items-center">
                             <item.icon className="mr-3 h-5 w-5" />
                             <span>{item.title}</span>
@@ -108,7 +108,7 @@ export function AppSidebar() {
                             <SidebarMenuSubItem key={subItem.title}>
                               <SidebarMenuSubButton 
                                 asChild
-                                className="hover:bg-yellow-500/20 text-yellow-100 rounded-md"
+                                className="hover:bg-yellow-600/20 text-gray-700 rounded-md"
                               >
                                 <a href={subItem.url} className="flex items-center">
                                   <subItem.icon className="mr-2 h-4 w-4" />
@@ -123,8 +123,8 @@ export function AppSidebar() {
                   ) : (
                     <SidebarMenuButton 
                       asChild
-                      className={`hover:bg-yellow-500/20 rounded-lg ${
-                        item.isActive ? 'bg-yellow-500/30 text-white font-medium' : 'text-white'
+                      className={`hover:bg-yellow-600/20 rounded-lg ${
+                        item.isActive ? 'bg-yellow-600/30 text-gray-800 font-medium' : 'text-gray-800'
                       }`}
                     >
                       <a href={item.url} className="flex items-center">
@@ -140,20 +140,20 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
 
-      <SidebarFooter className="p-4 border-t border-yellow-500/30">
+      <SidebarFooter className="p-4 border-t border-yellow-600/30">
         <div className="space-y-2">
-          <div className="flex items-center space-x-3 p-2 rounded-lg hover:bg-yellow-500/20 cursor-pointer">
-            <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
+          <div className="flex items-center space-x-3 p-2 rounded-lg hover:bg-yellow-600/20 cursor-pointer">
+            <div className="w-8 h-8 bg-yellow-600 rounded-full flex items-center justify-center">
               <User className="h-4 w-4 text-white" />
             </div>
             <div className="flex-1">
-              <p className="text-sm font-medium text-white">Admin User</p>
-              <p className="text-xs text-yellow-200">admin@tganb.gov</p>
+              <p className="text-sm font-medium text-gray-800">Admin User</p>
+              <p className="text-xs text-gray-600">admin@tganb.gov</p>
             </div>
           </div>
           <Button
             variant="ghost"
-            className="w-full justify-start hover:bg-yellow-500/20 text-white"
+            className="w-full justify-start hover:bg-yellow-600/20 text-gray-800"
             size="sm"
           >
             <Settings className="mr-2 h-4 w-4" />
@@ -161,7 +161,7 @@ export function AppSidebar() {
           </Button>
           <Button
             variant="ghost"
-            className="w-full justify-start hover:bg-red-500/20 text-white"
+            className="w-full justify-start hover:bg-red-500/20 text-gray-800"
             size="sm"
           >
             <LogOut className="mr-2 h-4 w-4" />
