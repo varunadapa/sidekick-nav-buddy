@@ -115,9 +115,9 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
 
-      <SidebarFooter className="p-4 border-t" style={{
+      <SidebarFooter style={{
       borderColor: 'rgba(16, 60, 66, 0.2)'
-    }}>
+    }} className="p-4 border-t bg-[FAE17F] bg-[#fae17f] rounded-none">
         <div className="space-y-2">
           <div className="flex items-center space-x-3 p-2 rounded-lg hover:bg-black/10 cursor-pointer">
             <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{
