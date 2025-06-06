@@ -80,7 +80,7 @@ export function AppSidebar() {
                         </SidebarMenuButton>
                       </CollapsibleTrigger>
                       <CollapsibleContent>
-                        <SidebarMenuSub className="ml-6 mt-1 space-y-1 bg-[#ffeb9d] rounded">
+                        <SidebarMenuSub className="ml-6 mt-1 space-y-1 bg-[#ffeb9d] rounded-lg">
                           {item.items.map(subItem => <SidebarMenuSubItem key={subItem.title}>
                               <SidebarMenuSubButton asChild className="hover:bg-black/10 rounded-md" style={{
                         backgroundColor: activeItem === subItem.url ? '#103C42' : 'transparent',
