@@ -63,12 +63,7 @@ export function AppSidebar() {
 
       <SidebarContent className="px-3 py-4 bg-[FAE17F] bg-[#fae17f]">
         <SidebarGroup>
-          <SidebarGroupLabel className="text-xs uppercase tracking-wider mb-2" style={{
-          color: '#103C42',
-          opacity: 0.7
-        }}>
-            Navigation
-          </SidebarGroupLabel>
+          
           <SidebarGroupContent>
             <SidebarMenu className="space-y-1">
               {navigationItems.map(item => <SidebarMenuItem key={item.title}>
@@ -104,7 +99,7 @@ export function AppSidebar() {
                 backgroundColor: activeItem === item.url ? '#103C42' : 'transparent',
                 color: activeItem === item.url ? 'white' : '#103C42'
               }}>
-                      <a href={item.url} className="flex items-center" onClick={() => handleItemClick(item.url)}>
+                      <a href={item.url} onClick={() => handleItemClick(item.url)} className="flex items-center py-[5px]">
                         <item.icon className="mr-3 h-5 w-5" />
                         <span>{item.title}</span>
                       </a>
